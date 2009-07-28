@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://ubuntu_url/skin/overlay.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://ubuntu_url/locale/overlay.dtd">
+<overlay id="ubuntu_url-overlay"
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script src="overlay.js"/>
+
+  <menupopup id="menu_ToolsPopup">
+        <menu label="Ubuntu Url">
+            <menupopup>
+              <menuitem label="Ubuntu-fr" oncommand="Ubuntu_url.onMenuItemCommand(event);" />
+              <menuitem label="Kubuntu-fr" oncommand="Ubuntu_url.setKubuntu(event);"/>
+            </menupopup>
+          </menu>
+  </menupopup>
+</overlay>
