@@ -2,6 +2,4 @@ content ubuntu_url content/
 overlay chrome://browser/content/browser.xul chrome://ubuntu_url/content/overlay.xul
 
 locale ubuntu_url en-US locale/en-US/
-
-skin ubuntu_url classic/1.0 skin/
-style chrome://global/content/customizeToolbar.xul chrome://ubuntu_url/skin/overlay.css
+locale ubuntu_url fr-FR locale/en-US/

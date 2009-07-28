@@ -6,10 +6,10 @@
   <script src="overlay.js"/>
 
   <menupopup id="menu_ToolsPopup">
-        <menu label="Ubuntu Url">
+        <menu label="&ubuntu_url;">
             <menupopup>
-              <menuitem label="Ubuntu-fr" oncommand="Ubuntu_url.onMenuItemCommand(event);" />
-              <menuitem label="Kubuntu-fr" oncommand="Ubuntu_url.setKubuntu(event);"/>
+              <menuitem label="&ubuntu_fr;" oncommand="Preferences.onUbuntu(event);" />
+              <menuitem label="&kubuntu_fr;" oncommand="Preferences.onKubuntu(event);"/>
             </menupopup>
           </menu>
   </menupopup>
