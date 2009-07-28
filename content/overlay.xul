@@ -10,6 +10,8 @@
             <menupopup>
               <menuitem label="&ubuntu_fr;" oncommand="Preferences.onUbuntu(event);" />
               <menuitem label="&kubuntu_fr;" oncommand="Preferences.onKubuntu(event);"/>
+              <menuitem label="&xubuntu_fr;" oncommand="Preferences.onXubuntu(event);"/>
+              <menuitem label="&edubuntu_fr;" oncommand="Preferences.onEdubuntu(event);"/>
             </menupopup>
           </menu>
   </menupopup>

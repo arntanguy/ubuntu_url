@@ -37,19 +37,17 @@ var Ubuntu_url = {
            // return true; -> to stop loading this url
            // getBrowser().mCurrentTab.linkedBrowser.loadURI("http://redirect.com"); return true; -> to redirect
          var prefSite = prefManager.getCharPref("extensions.ubuntu_url.preferedSite");
-        alert(prefSite);
+         var sites = prefManager.getCharPref("extensions.ubuntu_url.sites").split(",");
         var host = aUri.host;
         var path = aUri.path;
-        if(prefSite == "http://forum.ubuntu-fr.org") {
-            if(host == "forum.kubuntu-fr.org") {
-               getBrowser().mCurrentTab.linkedBrowser.loadURI("http://forum.ubuntu-fr.org"+path); return true;//-> to redirect
-            }
-        } else if (prefSite == "http://forum.kubuntu-fr.org") {
-            if(host == "forum.ubuntu-fr.org") {
-               getBrowser().mCurrentTab.linkedBrowser.loadURI("http://forum.kubuntu-fr.org"+path); return true;//-> to redirect
-            }
-        }
-        return false;
+         for(var i in sites) {
+             if(host == sites[i]) { // If the host is concerned by the redirection
+                 if("http://"+host != prefSite) {
+                   getBrowser().mCurrentTab.linkedBrowser.loadURI(prefSite+path); return true;//-> to redirect
+                 }
+             }
+         }
+        return false; // Else load the url as usual
     },
     doContent: function(aContentType, aIsContentPreferred, aRequest, aContentHandler )
     {
@@ -97,6 +95,12 @@ var Preferences = {
     },
     onKubuntu: function() {
          prefManager.setCharPref("extensions.ubuntu_url.preferedSite", "http://forum.kubuntu-fr.org");
+    },
+    onXubuntu: function() {
+         prefManager.setCharPref("extensions.ubuntu_url.preferedSite", "http://forum.xubuntu-fr.org");
+    },
+    onEdubuntu: function() {
+         prefManager.setCharPref("extensions.ubuntu_url.preferedSite", "http://forum.edubuntu-fr.org");
     }
 
 }
